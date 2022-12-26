@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/custom.css" />
 </head>
 <body>
-	
+	   session.invalidate();
 	<script>
 		location.href = 'main.jsp';
 	</script>

@@ -111,4 +111,25 @@ public class UserDAO {
 		}
 		return -1; // DB 오류
 	}
+	public String id_search2(String userName, String userEmail){  //이름,이메일로 찾기
+		  String userID=null ; //찾을아이디
+		  
+		  String SQL="select userID from user where userName=? and userEmail=?";
+		  
+		  try{
+		PreparedStatement pstmt = conn.prepareStatement(SQL);; //쿼리
+		   pstmt.setString(1, userName); //첫번째 ?를 스트링 id로 넣음
+		   pstmt.setString(2, userEmail); //두번째 ?에 스트링 pw 넣음
+		   
+		   rs=pstmt.executeQuery(); //쿼리를 실행해서 결과값을 rs로 저장
+		   while(rs.next()){  //rs가 끝날때까지 반복
+			   userID=rs.getString("userID"); //cnt를 디비에서 가져온 cnt에 저장  
+		   }
+
+		  }catch(Exception e){
+		   System.out.println(e);
+		  }
+		  return userID;
+		 }
+
 }

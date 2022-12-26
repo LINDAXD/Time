@@ -33,6 +33,7 @@
 						aria-expanded="false">회원관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li class="active"><a href="login.jsp">로그인</a></li>
+						<li class="active"><a href="id_find.jsp">아이디 찾기</a></li>
 						<li><a href="join.jsp">회원가입</a></li>
 					</ul>
 				</li>
