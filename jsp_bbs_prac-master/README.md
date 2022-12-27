@@ -37,43 +37,28 @@
 
 ***************
 <b> 🖥기능별 구동 예시</b>
-* 게시물 등록 기능
-<img src="https://github.com/LINDAXD/Time/main/img/main.PNG" width="400" height="400">
+* 메인 화면 및 캘린더 강좌 목록 기능
+<img src="https://github.com/LINDAXD/Time/blob/main/jsp_bbs_prac-master/img/main.PNG" width="1164" height="555">
 
-* 게시물 읽기 기능
-<img src="https://github.com/LINDAXD/Time/blob/main/img/2_read.png" width="400" height="400">
+* 로그인 및 회원가입 기능
+<img src="https://github.com/LINDAXD/Time/blob/main/jsp_bbs_prac-master/img/login.PNG" width="1164" height="555">
 
-* 회원가입 기능
-<img src="https://github.com/LINDAXD/Time/blob/main/img/4_join.png" width="400" height="300">
+* 아이디/ 비밀번호 찾기 기능
+<img src="https://github.com/LINDAXD/Time/blob/main/jsp_bbs_prac-master/img/id_password.PNG" width="1164" height="555">
 
-* 로그인 기능<br> 
+* 게시판 기능 및 수강신청<br> 
 &rarr; 로그인을 하면 [게시물 목록] 옆에 로그인한 아이디가 표시된다. 
-<img src="https://github.com/LINDAXD/Time/blob/main/img/5_login.png" width="450" height="300">
+<img src="https://github.com/LINDAXD/Time/blob/main/jsp_bbs_prac-master/img/bbs.PNG" width="1164" height="555">
 
-* 프로그램 종료 기능
-<img src="https://github.com/LINDAXD/Time/blob/main/img/6_exit.png" width="400" height="300">
+* 회원 탈퇴 기능
+<img src="https://github.com/LINDAXD/Time/blob/main/jsp_bbs_prac-master/img/idout.PNG" width="1164" height="555">
 
-* 로그인 후 개인 작성글 한정 삭제 기능
-<img src="https://github.com/LINDAXD/Time/blob/main/img/afterLogin_delete.png" width="400" height="400">
-
-* 로그인 후 개인 작성글 수정 기능<br> 
-&rarr; 스스로 작성한 글이므로 글쓴이는 수정이 불가능하다. 
-<img src="https://github.com/dhlllllll/java_project/blob/main/img/afterLogin_update.png" width="400" height="400">
-<img src="https://github.com/dhlllllll/java_project/blob/main/img/afterLogin_update2.png" width="400" height="300">
-
-* 로그아웃 기능<br> 
-&rarr; 로그아웃을 하면 표시됐던 아이디가 사라진다. 
-<img src="https://github.com/dhlllllll/java_project/blob/main/img/logout.png" width="400" height="400">
-<br>
+* 수강 후기 및 캘린더 기능
+<img src="https://github.com/LINDAXD/Time/blob/main/jsp_bbs_prac-master/img/calendar.PNG" width="1164" height="555">
 
 ***************
 <b> 💡프로젝트 회고</b>
 ```
-자바에서 데이터베이스를 연동하는 부분을 몇번의 시행착오를 통해 성공해내면서 
-데이터들이 어떤 구조로 연동이 되는지 제대로 이해하고 습득할 수 있었던 
-좋은 기회였습니다. 무엇보다 이론적으로만 배웠던 CRUD 기능을 직접 구현해볼 수 있어서 좋았고 
-자바 공부에도 큰 도움이 되었던 프로젝트였습니다. 
-이 다음에는 데이터베이스를 오라클뿐만 아니라 mySQL로도 연동해보고 
-좀 더 다양한 DB를 다룰 수 있도록 노력해야겠다고 생각했습니다.
+
 ```
 
