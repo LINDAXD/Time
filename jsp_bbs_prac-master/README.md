@@ -1,14 +1,14 @@
-# JSP 팀프로젝트  <img src="https://img.shields.io/badge/java-11.0.2-green">  <img src="https://img.shields.io/badge/-oracle-blue"> 
+# JSP 팀프로젝트  <img src="https://img.shields.io/badge/JDK-11.0.2-green">  <img src="https://img.shields.io/badge/-MySQL-blue">  <img src="https://img.shields.io/badge/JSP-11.0.2-red">
 
-💡 `#JSP`와 `#DB`를 이용하여 만든 ** 프로젝트**  
+💡 `#JSP`와 `#DB`를 이용하여 만든 ** BBS프로젝트**  
 <br>
 
 ## ✔ 프로젝트 소개 
-- 개발기간 : 22/12/05 ~ 22/12/10
+- 개발기간 : 22/12/19 ~ 22/12/30
 - 개발환경 : Windows 10
-- 개발도구 : <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white">
-- 프로젝트 성격 : JAVA 콘솔 프로젝트 
-- 프로젝트 목표 : CRUD 기능이 포함된 게시판이 명령 프롬프트(윈도우)에서 실행되도록 JDBC를 활용해서 구현해보았습니다.
+- 개발도구 : <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-2C2255?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Notion-2C2255?style=for-the-badge&logo=Notion&logoColor=white">
+- 프로젝트 성격 : JSP & DB
+- 프로젝트 목표 : DAO,VO,Action,DB
 <br>
 <br>
 
