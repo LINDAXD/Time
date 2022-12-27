@@ -38,23 +38,23 @@
 ***************
 <b> 🖥기능별 구동 예시</b>
 * 게시물 등록 기능
-<img src="https://github.com/dhlllllll/java_project/blob/main/img/1_create.png" width="400" height="400">
+<img src="https://github.com/LINDAXD/Time/main/img/main.PNG" width="400" height="400">
 
 * 게시물 읽기 기능
-<img src="https://github.com/dhlllllll/java_project/blob/main/img/2_read.png" width="400" height="400">
+<img src="https://github.com/LINDAXD/Time/blob/main/img/2_read.png" width="400" height="400">
 
 * 회원가입 기능
-<img src="https://github.com/dhlllllll/java_project/blob/main/img/4_join.png" width="400" height="300">
+<img src="https://github.com/LINDAXD/Time/blob/main/img/4_join.png" width="400" height="300">
 
 * 로그인 기능<br> 
 &rarr; 로그인을 하면 [게시물 목록] 옆에 로그인한 아이디가 표시된다. 
-<img src="https://github.com/dhlllllll/java_project/blob/main/img/5_login.png" width="450" height="300">
+<img src="https://github.com/LINDAXD/Time/blob/main/img/5_login.png" width="450" height="300">
 
 * 프로그램 종료 기능
-<img src="https://github.com/dhlllllll/java_project/blob/main/img/6_exit.png" width="400" height="300">
+<img src="https://github.com/LINDAXD/Time/blob/main/img/6_exit.png" width="400" height="300">
 
 * 로그인 후 개인 작성글 한정 삭제 기능
-<img src="https://github.com/dhlllllll/java_project/blob/main/img/afterLogin_delete.png" width="400" height="400">
+<img src="https://github.com/LINDAXD/Time/blob/main/img/afterLogin_delete.png" width="400" height="400">
 
 * 로그인 후 개인 작성글 수정 기능<br> 
 &rarr; 스스로 작성한 글이므로 글쓴이는 수정이 불가능하다. 
