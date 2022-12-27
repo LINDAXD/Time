@@ -1,6 +1,6 @@
-# 자바 개인 프로젝트 JAVA PROJECT <img src="https://img.shields.io/badge/java-11.0.2-green">  <img src="https://img.shields.io/badge/-oracle-blue"> 
+# JSP 팀프로젝트  <img src="https://img.shields.io/badge/java-11.0.2-green">  <img src="https://img.shields.io/badge/-oracle-blue"> 
 
-💡 `#JAVA`와 `#JDBC`(Oracle)를 이용하여 만든 **JAVA 게시판만들기 프로젝트**  
+💡 `#JSP`와 `#DB`를 이용하여 만든 ** 프로젝트**  
 <br>
 
 ## ✔ 프로젝트 소개 
