@@ -10,6 +10,8 @@
 - 버전관리 : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Notion-2C2255?style=for-the-badge&logo=Notion&logoColor=white">
 - 프로젝트 성격 : JSP & DB
 - 프로젝트 목표 : 애브리 타임 이라는 학사 관리 앱을 모티브로 한 학사 관리 웹 아카데미 타임을 프로그래밍
+- 애브리타임 주소 : https://everytime.kr/
+- 아카데미 타임 주소 :  http://localhost:8090/BBS2/main.jsp
 <br>
 <br>
 
