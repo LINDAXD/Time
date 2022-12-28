@@ -1,4 +1,4 @@
-# JSP 팀프로젝트  <img src="https://img.shields.io/badge/JDK-11.0.2-green">  <img src="https://img.shields.io/badge/-MySQL-blue">  <img src="https://img.shields.io/badge/JSP-11.0.2-red">
+# JSP 팀프로젝트  <img src="https://img.shields.io/badge/JDK-11.0.2-green">  <img src="https://img.shields.io/badge/-MySQL-blue">  <img src="https://img.shields.io/badge/JSP-red"> <img src="https://img.shields.io/badge/JAVASCRIT-yellow">  <img src="https://img.shields.io/badge/HTML5-yellow">  <img src="https://img.shields.io/badge/CSS3-yellow"> 
 
 💡 `#JSP`와 `#DB`를 이용하여 만든 ** BBS프로젝트**  
 <br>
@@ -6,7 +6,8 @@
 ## ✔ 프로젝트 소개 
 - 개발기간 : 22/12/19 ~ 22/12/30
 - 개발환경 : Windows 10
-- 개발도구 : <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-2C2255?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Notion-2C2255?style=for-the-badge&logo=Notion&logoColor=white">
+- 개발도구 : <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white">  <img src="https://img.shields.io/badge/MYSQL-2C2255?style=for-the-badge&logo=MYSQL&logoColor=white"> 
+- 버전관리 : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Notion-2C2255?style=for-the-badge&logo=Notion&logoColor=white">
 - 프로젝트 성격 : JSP & DB
 - 프로젝트 목표 : DAO,VO,Action,DB
 <br>
