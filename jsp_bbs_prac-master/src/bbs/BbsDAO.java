@@ -14,8 +14,8 @@ public class BbsDAO {
 	public BbsDAO() {
 		//UserDAO 객체가 생성될때 바로 데이터베이스 접근하도록 생성자 설정
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/jinhyuk";
-			String dbID = "jinhyuk";
+			String dbURL = "jdbc:mysql://127.0.0.1:3306/BBS";
+			String dbID = "root";
 			String dbPassword = "12345";
 			
 			Class.forName("com.mysql.jdbc.Driver");
@@ -153,7 +153,7 @@ public class BbsDAO {
 	}
 	
 	public int delete(int bbsID) {
-		String SQL = "delete from bbs where bbsID = ?";
+		String SQL = "update bbs set bbsAvailable = 0 where bbsID = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, bbsID);
