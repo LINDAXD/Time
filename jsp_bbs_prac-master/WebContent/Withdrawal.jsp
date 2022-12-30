@@ -1,95 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import="user.UserDAO" %>
-<%@ page import="user.User" %>
-<%@ page import="java.util.ArrayList" %>
+	pageEncoding="UTF-8"%>
+<%@ page import="user.UserDAO"%>
+<%@ page import="user.User"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="css/custom.css" />
-<title>Insert title here</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/kakao.css">
+<link rel="stylesheet" href="css/kakao2.css">
+<title>아카데미타임</title>
 </head>
 <body>
-	<%
-		String userID = null;
-		if (session.getAttribute("userID") != null) { //session 에 userID 값을 가져옴
-			userID = (String) session.getAttribute("userID");
-		}
-	%>
-	<nav class="navbar navbar-default">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>	
-			</button>
-			<a href="main.jsp" class="navbar-brand">JSP 게시판 웹 사이트</a>
-		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="main.jsp">메인</a></li>
-				<li><a href="bbs.jsp">게시판</a></li>
-				<li><a href="Enrolment.jsp">수강신청</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">접속하기<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="login.jsp">로그인</a></li>
-						<li class="active"><a href="join.jsp">회원가입</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<div class="container">
-		<div class="col-lg-4"></div>
-		<div class="col-lg-4">
-			<div class="jumbotron" style="padding-top: 20px;">
-				<form action="mypagedeleteAction.jsp" method="post">
-					<h3 style="text-align: center;">내정보 화면</h3>
-					
-					<%
+	<%@ include file="./header.jsp"%>
+
+	<div id="login">
+		<div id="wrap">
+			<div id="top_wrap">
+				<h1>
+					<a href="#"><img src="images/download.png" alt="#" width="100"
+						height="30"></a>
+				</h1>
+			</div>
+			<!--top_wrap-->
+
+			<h2 class="selected1">내 정보</h2>
+			<div id="login_con">
+				<div id="login1" class="login_box">
+					<form action="mypagedeleteAction.jsp" method="post">
+						<%
 						UserDAO userDAO = new UserDAO();
 						User user = userDAO.getUser(userID);
-					%>
-						
-					<div class="form-group">
-						아이디 <input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20" value="<%=user.getUserID()%>" readonly />
-					</div>
-					<div class="form-group">
-						비밀번호<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" value="<%=user.getUserPassword()%>" maxlength="20"/>
-					</div>
-					<div class="form-group">
-						이름<input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20" value="<%=user.getUserName()%>"/>
-					</div>
-					<div class="form-group" style="text-align: center;">
-					성별
-						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-primary active">
-								<input type="radio" name="userGender" autocomplete="off" value="male" checked />남자
-							</label>
-							<label class="btn btn-primary">
-								<input type="radio" name="userGender" autocomplete="off" value="female"/>여자
-							</label>
+						%>
+
+						<div class="form-group">
+							아이디(변경불가) <input type="text" class="form-control1" placeholder="아이디"
+								name="userID" maxlength="20" value="<%=user.getUserID()%>"
+								readonly />
 						</div>
-					</div>
-					<div class="form-group">
-						E-mail<input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="20" value="<%=user.getUserEmail()%>"/>
-					</div>															
-					<input type="submit" class="btn btn-primary form-control" value="회원탈퇴"/>
-				</form>
+						<div class="form-group">
+							비밀번호<input type="password" class="form-control1"
+								placeholder="비밀번호" name="userPassword"
+								value="<%=user.getUserPassword()%>" maxlength="20" />
+						</div>
+						<div class="form-group">
+							이름<input type="text" class="form-control1" placeholder="이름"
+								name="userName" maxlength="20" value="<%=user.getUserName()%>" />
+						</div>
+						<div class="form-group" style="text-align: center;">
+							성별
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-custom active"> <input
+									type="radio" name="userGender" autocomplete="off" value="male"
+									checked />남자
+								</label> <label class="btn btn-custom"> <input type="radio"
+									name="userGender" autocomplete="off" value="female" />여자
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							E-mail<input type="email" class="form-control1" placeholder="이메일"
+								name="userEmail" maxlength="20" value="<%=user.getUserEmail()%>" />
+						</div>
+						<input type="submit" class="btn btn-custom form-control1"
+							value="회원탈퇴" />
+					</form>
+				</div>
+				<!--회원로그인 전체내용-->
+
 			</div>
+			<!--login_con-->
 		</div>
-		<div class="col-lg-4"></div>
+		<!--wrap 전체-->
 	</div>
-	
+
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>

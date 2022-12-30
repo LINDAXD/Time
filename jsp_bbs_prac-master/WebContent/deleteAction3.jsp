@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="bbs.BbsDAO"%>
-<%@ page import="bbs.Bbs"%>
+<%@ page import="eva.EvaDAO"%>
+<%@ page import="eva.Eva"%>
 <%@ page import="java.io.PrintWriter"%>
 <%
 request.setCharacterEncoding("UTF-8");
@@ -26,28 +26,28 @@ request.setCharacterEncoding("UTF-8");
 		script.println("</script>");
 	}
 
-	int bbsID = 0;
+	int evaID = 0;
 	// url에 bbsID가 넘어온다면 bbsID 변수에 정보 저장
-	if (request.getParameter("bbsID") != null) {
-		bbsID = Integer.parseInt(request.getParameter("bbsID"));
+	if (request.getParameter("evaID") != null) {
+		evaID = Integer.parseInt(request.getParameter("evaID"));
 	}
-	if (bbsID == 0) {
+	if (evaID == 0) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('유효하지 않은 글입니다.')");
-		script.println("location.href = 'bbs.jsp'");
+		script.println("location.href = 'eva.jsp'");
 		script.println("</script>");
 	}
-	Bbs bbs = new BbsDAO().getBbs(bbsID);
-	if (!userID.equals(bbs.getUserID())) {
+	Eva eva = new EvaDAO().geteva(evaID);
+	if (!userID.equals(eva.getUserID())) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('권한이 없습니다.')");
-		script.println("location.href = 'bbs.jsp'");
+		script.println("location.href = 'eva.jsp'");
 		script.println("</script>");
 	} else {
-		BbsDAO bbsDAO = new BbsDAO();
-		int result = bbsDAO.delete(bbsID);
+		EvaDAO evaDAO = new EvaDAO();
+		int result = evaDAO.delete(evaID);
 		if (result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
@@ -57,7 +57,7 @@ request.setCharacterEncoding("UTF-8");
 		} else { // 글삭제 성공
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href = 'bbs.jsp'");
+			script.println("location.href = 'eva.jsp'");
 			script.println("</script>");
 		}
 	}

@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page import="bbs.Bbs"%>
+<%@ page import="comment.Comment"%>
+<%@ page import="comment.CommentDAO"%>
 <%@ page import="bbs.BbsDAO"%>
+<%@ page import="bbs.Bbs"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,7 +85,6 @@
 			}
 			%>
 			<input type="submit" class="btn btn-custom pull-right" value="글쓰기" />
-
 		</div>
 	</div>
 
@@ -109,6 +110,8 @@
 			</form>
 		</div>
 	</div>
+
+
 
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
