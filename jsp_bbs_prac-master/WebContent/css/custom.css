@@ -4,12 +4,75 @@
 * {
 	font-family : 'nanum Gothic';
 }
-h1 {
+a{
+	text-decoration:none;
+	color:#107660;
+}
+a:hover{
+	text-decoration:none;
+	color:#333;
+	
+}
+.kk{
+    width:1500px;
+    height: 100%;
+    margin:0 auto;
+}/*전체창*/
+.kk .navbar-header{
+	float:right;
+}
+
+h1,#logo h1 a {
 	font-family : 'Hanna';
 }
 .carousel-indicators li {
-	background-color: #888;
+	background-color: #ffffff;
 }
 .carousel-indicators .active {
     background-color: #000;
+}
+
+.container{
+	padding:20px;
+}
+.row{
+	margin-bottom:15px;
+}
+
+
+.table-custom > tbody > tr > th, .table-custom> tbody > tr > td{
+	padding:20px 10px;
+	vertical-align:middle;
+}
+table th{
+	text-align:center;
+}
+.table-custom .tr-content{
+   height: 398px;
+}
+.btn-custom{
+	background-color:#107660;
+	color:#ffffff;
+	cursor: pointer;
+}
+.btn-custom:hover{
+	background-color:#044738;
+	color:#ffffff;	
+}
+
+#find{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 140px;
+    text-align: center;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+	
+}
+
+@media (min-width: 768px){
+.navbar-header {
+    float: right;
+}
 }

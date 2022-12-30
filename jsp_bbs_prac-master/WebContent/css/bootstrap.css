@@ -2318,7 +2318,7 @@ th {
   border-bottom-width: 2px;
 }
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
 }
 .table-hover > tbody > tr:hover {
   background-color: #f5f5f5;
@@ -2548,9 +2548,10 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
+  width: 655px;
+  margin:0 auto;
   height: 34px;
-  padding: 6px 12px;
+  padding: 20px 12px;
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
@@ -3172,8 +3173,9 @@ fieldset[disabled] .btn-primary.focus {
 }
 .btn-success {
   color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #107660;
+  border-color: #ffffff;
+  float:right;
 }
 .btn-success:focus,
 .btn-success.focus {
@@ -4492,10 +4494,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
 }
-.navbar-default {
+
+/* .navbar-default {
   background-color: #f8f8f8;
   border-color: #e7e7e7;
-}
+} */
 .navbar-default .navbar-brand {
   color: #777;
 }
@@ -4509,6 +4512,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a {
   color: #777;
+    float:right; /*화면 작아졌을 때 접속하기 오른쪽 정렬*/
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -4692,7 +4696,6 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 .breadcrumb {
   padding: 8px 15px;
-  margin-bottom: 20px;
   list-style: none;
   background-color: #f5f5f5;
   border-radius: 4px;
@@ -4959,8 +4962,10 @@ a.badge:focus {
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
+  padding-right:50px;
+  padding-left:50px;
   color: inherit;
-  background-color: #eee;
+  background-color: #ffffff;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -5472,6 +5477,7 @@ button.list-group-item-danger.active:focus {
   margin-bottom: 0;
   font-size: 16px;
   color: inherit;
+  padding:100px;
 }
 .panel-title > a,
 .panel-title > small,
@@ -6753,5 +6759,9 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+.btn-success:hover{
+	background-color:#044738;
 }
 /*# sourceMappingURL=bootstrap.css.map */
