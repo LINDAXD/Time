@@ -1,19 +1,26 @@
-package evaluation;
+package eva;
 
 public class Eva {
 	private int evaID;
+	private String userID;
 	private String evaTitle;
 	private String evaSubject; //강의명
 	private String evaTeacher; //선생님
-	private String evaDate;
 	private String evaContent;
-	private int evaScore; //점수
+	private String evaScore; //점수
+	private String evaDate;
 	private int evaAvailable; //삭제
 	public int getEvaID() {
 		return evaID;
 	}
 	public void setEvaID(int evaID) {
 		this.evaID = evaID;
+	}
+	public String getUserID() {
+		return userID;
+	}
+	public void setUserID(String userID) {
+		this.userID = userID;
 	}
 	public String getEvaTitle() {
 		return evaTitle;
@@ -33,23 +40,23 @@ public class Eva {
 	public void setEvaTeacher(String evaTeacher) {
 		this.evaTeacher = evaTeacher;
 	}
-	public String getEvaDate() {
-		return evaDate;
-	}
-	public void setEvaDate(String evaDate) {
-		this.evaDate = evaDate;
-	}
 	public String getEvaContent() {
 		return evaContent;
 	}
 	public void setEvaContent(String evaContent) {
 		this.evaContent = evaContent;
 	}
-	public int getEvaScore() {
+	public String getEvaScore() {
 		return evaScore;
 	}
-	public void setEvaScore(int evaScore) {
+	public void setEvaScore(String evaScore) {
 		this.evaScore = evaScore;
+	}
+	public String getEvaDate() {
+		return evaDate;
+	}
+	public void setEvaDate(String evaDate) {
+		this.evaDate = evaDate;
 	}
 	public int getEvaAvailable() {
 		return evaAvailable;
@@ -58,6 +65,7 @@ public class Eva {
 		this.evaAvailable = evaAvailable;
 	}
 	
+
 	
 
 }

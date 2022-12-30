@@ -1,4 +1,4 @@
-package evaluation;
+package eva;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,10 +14,9 @@ public class EvaDAO {
 	public EvaDAO() {
 		//UserDAO 객체가 생성될때 바로 데이터베이스 접근하도록 생성자 설정
 		try {
-			String dbURL = "jdbc:mysql://127.0.0.1:3306/eva";
+			String dbURL = "jdbc:mysql://127.0.0.1:3306/BBS";
 			String dbID = "root";
-			String dbPassword = "0000";
-			
+			String dbPassword = "12345";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL,  dbID, dbPassword);
 		} catch(Exception e) {
@@ -57,16 +56,19 @@ public class EvaDAO {
 	}
 	
 	// 글쓰기 정보 -> DB에 추가
-	public int write(String evaTitle, String userID, String evaContent) {
-		String SQL = "insert into eva values (?, ?, ?, ?, ?, ?)";
+	public int write(String userID, String EvaTitle, String EvaSubject, String EvaTeacher, String EvaContent, String EvaScore) {
+		String SQL = "insert into eva values (?, ?, ?, ?, ?, ?, ?, ? ,?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext());
-			pstmt.setString(2, evaTitle);
-			pstmt.setString(3, userID);
-			pstmt.setString(4, getDate());
-			pstmt.setString(5, evaContent);
-			pstmt.setInt(6, 1);
+			pstmt.setString(2, userID);
+			pstmt.setString(3, EvaTitle);
+			pstmt.setString(4, EvaSubject);
+			pstmt.setString(5, EvaTeacher);
+			pstmt.setString(6, EvaContent);	
+			pstmt.setString(7, EvaScore);
+			pstmt.setString(8, getDate());
+			pstmt.setInt(9, 1);
 			return pstmt.executeUpdate(); // 0 이상의 결과 반환
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -85,14 +87,15 @@ public class EvaDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Eva eva = new Eva();
-				eva.setEvaID(rs.getString(1));
-				eva.setEvaTitle(rs.getString(2));
-				eva.setEvaSubject(rs.getString(3));
-				eva.setEvaTeacher(rs.getString(4));
-				eva.setEvaDate(rs.getString(5));
+				eva.setEvaID(rs.getInt(1));
+				eva.setUserID(rs.getString(2));
+				eva.setEvaTitle(rs.getString(3));
+				eva.setEvaSubject(rs.getString(4));
+				eva.setEvaTeacher(rs.getString(5));
 				eva.setEvaContent(rs.getString(6));
 				eva.setEvaScore(rs.getString(7));
-				eva.setEvaAvailable(rs.getString(8));
+				eva.setEvaDate(rs.getString(8));
+				eva.setEvaAvailable(rs.getInt(9));
 				
 				list.add(eva);
 			}
@@ -127,14 +130,15 @@ public class EvaDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				Eva eva = new Eva();
-				eva.setEvaID(rs.getString(1));
-				eva.setEvaTitle(rs.getString(2));
-				eva.setEvaSubject(rs.getString(3));
-				eva.setEvaTeacher(rs.getString(4));
-				eva.setEvaDate(rs.getString(5));
+				eva.setEvaID(rs.getInt(1));
+				eva.setUserID(rs.getString(2));
+				eva.setEvaTitle(rs.getString(3));
+				eva.setEvaSubject(rs.getString(4));
+				eva.setEvaTeacher(rs.getString(5));
 				eva.setEvaContent(rs.getString(6));
 				eva.setEvaScore(rs.getString(7));
-				eva.setEvaAvailable(rs.getString(8));
+				eva.setEvaDate(rs.getString(8));
+				eva.setEvaAvailable(rs.getInt(9));
 				return eva;
 			}
 		} catch (Exception e) {
@@ -143,13 +147,16 @@ public class EvaDAO {
 		return null;
 	}
 	
-	public int update(int evaID, String evaTitle, String evaContent) {
-		String SQL = "update eva set evaTitle = ?, evaContent = ? where evaID = ?";
+	public int update(int evaID, String evaTitle,  String evaSubject,String evaTeacher, String evaContent, String evaScore) {
+		String SQL = "update eva set evaTitle = ?, evaSubject=?, evaTeacher=?, evaContent = ?, evaScore =?  where evaID = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, evaTitle);
-			pstmt.setString(2, evaContent);
-			pstmt.setInt(3, evaID);
+			pstmt.setString(2, evaSubject);
+			pstmt.setString(3, evaTeacher);
+			pstmt.setString(4, evaContent);
+			pstmt.setString(5, evaScore);
+			pstmt.setInt(6, evaID);
 			return pstmt.executeUpdate(); // 0 이상의 결과 반환
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -158,7 +165,7 @@ public class EvaDAO {
 	}
 	
 	public int delete(int evaID) {
-		String SQL = "update eva set evaAvailable = 0 where evaID = ?";
+		String SQL = "delete from eva where evaID = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, evaID);
@@ -168,5 +175,59 @@ public class EvaDAO {
 		}
 		return -1; // DB 오류
 	}
+	
+	public String getAvg2() {
+	      String SQL = "select evaSubject, avg(evaScore) from eva group by evaSubject;";
+	      try {
+	         PreparedStatement pstmt = conn.prepareStatement(SQL);
+	         rs = pstmt.executeQuery();
+	         if(rs.next()) {       	 
+	            return rs.getString(1);
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	      return ""; // DB 오류
+	   }
+	   public String getAvg() {
+	      String SQL = "select evaSubject, avg(evaScore) from eva group by evaSubject;";
+	      try {
+	         PreparedStatement pstmt = conn.prepareStatement(SQL);
+	         rs = pstmt.executeQuery();
+	         if(rs.next()) {
+	            return rs.getString(2);
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	      return ""; // DB 오류
+	   }
+	   
+		public String getAvg3() {
+		      String SQL = "select evaSubject, avg(evaScore) from eva group by evaSubject;";
+		      try {
+		         PreparedStatement pstmt = conn.prepareStatement(SQL);
+		         rs = pstmt.executeQuery();
+		         if(rs.next()) {       	 
+		            return rs.getString(1);
+		         }
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+		      return ""; // DB 오류
+		   }
+		   public String getAvg4() {
+		      String SQL = "select evaSubject, avg(evaScore) from eva group by evaSubject;";
+		      try {
+		         PreparedStatement pstmt = conn.prepareStatement(SQL);
+		         rs = pstmt.executeQuery();
+		         if(rs.next()) {
+		            return rs.getString(2);
+		         }
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+		      return ""; // DB 오류
+		   }
 	
 }
