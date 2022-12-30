@@ -14,8 +14,8 @@ public class UserDAO {
 	public UserDAO() {
 		//UserDAO 객체가 생성될때 바로 데이터베이스 접근하도록 생성자 설정
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/jinhyuk";
-			String dbID = "jinhyuk";
+			String dbURL = "jdbc:mysql://127.0.0.1:3306/BBS";
+			String dbID = "root";
 			String dbPassword = "12345";
 			
 			Class.forName("com.mysql.jdbc.Driver");
@@ -111,4 +111,46 @@ public class UserDAO {
 		}
 		return -1; // DB 오류
 	}
+	public String id_search2(String userName, String userEmail){  //이름,이메일로 찾기
+		  String userID=null ; //찾을아이디
+		  
+		  String SQL="select userID from user where userName=? and userEmail=?";
+		  
+		  try{
+		PreparedStatement pstmt = conn.prepareStatement(SQL);; //쿼리
+		   pstmt.setString(1, userName); //첫번째 ?를 스트링 id로 넣음
+		   pstmt.setString(2, userEmail); //두번째 ?에 스트링 pw 넣음
+		   
+		   rs=pstmt.executeQuery(); //쿼리를 실행해서 결과값을 rs로 저장
+		   while(rs.next()){  //rs가 끝날때까지 반복
+			   userID=rs.getString("userID"); //cnt를 디비에서 가져온 cnt에 저장  
+		   }
+
+		  }catch(Exception e){
+		   System.out.println(e);
+		  }
+		  return userID;
+		 }
+	public String pw_search(String userName, String userEmail){
+		
+		  String userPassword=null;//찾을비밀번호
+		  String SQL="select userPassword from user where userName=? and userEmail=?";
+		  
+		  try{
+				PreparedStatement pstmt = conn.prepareStatement(SQL);; //쿼리
+				   pstmt.setString(1, userName); //첫번째 ?를 스트링 id로 넣음
+				   pstmt.setString(2, userEmail); //두번째 ?에 스트링 pw 넣음
+				   
+				   rs=pstmt.executeQuery(); //쿼리를 실행해서 결과값을 rs로 저장
+				   while(rs.next()){  //rs가 끝날때까지 반복
+					   userPassword=rs.getString("userPassword"); //cnt를 디비에서 가져온 cnt에 저장  
+				   }
+
+				  }catch(Exception e){
+				   System.out.println(e);
+				  }
+				  return userPassword;
+				 }
+
+
 }
